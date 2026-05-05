@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../css/contactus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+  <header>
+    <header>
+    <nav class="navbar">
+        <div class="nav-right">
+            <div class="logo" style="font-size: 30px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><b>Gamers Gate</b></div> </div>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search games and categories...">
+            <div id="searchDropdown" class="search-dropdown">
+                </div>
+        </div>
+
+        <div class="nav-left">
+            <i class="fas fa-palette theme-icon" id="themeBtn" title="Change Theme"></i>
+            <button class="login-btn" id="authBtn"></button>        </div>
+    </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-list">
+            <li><i class="fas fa-home"></i> <span><a href="../index.html">Home</a></span></li>
+            <li><i class="fas fa-fire"></i> <span><a href="news.html">News </a></span></li>
+            <li><i class="fas fa-star"></i> <span><a href="favgames.html">Favorites</a></span></li>
+            <li><i class="fas fa-bolt"></i> <span><a href="aabout us .html">About Us</a></span></li>
+            <li><i class="fas fa-phone"></i> <span><a href="contactus.html">Contact Us</a></span></li>
+            </ul>
+    </aside>
+  <main> 
+    <section class="contact-info">
+        <div class="form-section"> 
+            <form id="myform"> 
+                <label> Email</label>
+                <input type="email"  id="user-email" name="email" placeholder="Enter Your Email" required>
+                <label> Phone</label>
+                <input type="tel" id="user-phone"  pattern="[0-9]+" name="phone" placeholder="Enter Your Phone Number" required>
+                <label> Adderss</label>
+                <input type="text" id="user-adderss" name="adderss" placeholder="Enter Your Adderss" required>
+                <label> FeedBack</label>
+                <textarea id="user-feedback" name="FeedBack" rows="12" placeholder="Enter Your Feed Back ">
+                </textarea>
+                <button type="submit"> Submit</button>
+            </form>
+
+        </div>
+    </section>
+  </main>
+  <script>
+    document.getElementById('user-phone').addEventListener('input', function () {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
+
+    document.getElementById('myform').addEventListener('submit', function (e) { e.preventDefault();
+        const email=document.getElementById('user-email').value;
+        const phone=document.getElementById('user-phone').value;
+         const adderss=document.getElementById('user-adderss').value;
+          const feedback=document.getElementById('user-feedback').value;
+          if (email === "" || phone === "" || adderss === "" || feedback === "") {
+            alert ("All fields are required!");
+            return ;
+          }
+
+          localStorage.setItem('userEmail',email);
+          localStorage.setItem('userPhone',phone);
+          localStorage.setItem('userAdderss',adderss);
+          localStorage.setItem('userFeedBack',feedback);
+          document.getElementById('user-email').value="";
+          document.getElementById('user-phone').value="";
+          document.getElementById('user-adderss').value="";
+          document.getElementById('user-feedback').value="";
+          let inputs = document.querySelectorAll("#myform input, #myform textarea");
+
+       inputs.forEach(function(input, index) {
+         input.addEventListener("keydown", function(e) {
+           if (e.key === "Enter" && input.tagName !== "TEXTAREA") {
+            e.preventDefault();
+
+             if (inputs[index + 1]) {
+                inputs[index + 1].focus();
+             }
+            }
+         });
+       });
+    
+         alert("User information saved successfully!");
+         this.reset();
+
+
+    });
+    const allGames = [
+    { name: "Mario Kart 8", img: "../pic/MarioKart8.JPG", link: "mario.html" }, 
+    { name: "Moto X3M", img: "../pic/MotoX3M.JPG", link: "moto.html" },
+    { name: "Minicraft 2", img: "../pic/Minicraft2.JPG", link: "minicraft.html" },
+    { name: "Sonic Mania", img: "../pic/SonicMania.JPG", link: "sonic.html" },
+    { name: "Bloxd.io", img: "../pic/Bloxd.io.JPG", link: "bloxd.html" },
+    { name: "Pupg", img: "../pic/pupg.jpeg", link: "bubg.html" },
+    { name: "Elden Ring", img: "../pic/elden.jpeg", link: "elden.html" },
+    { name: "Hollow Knight", img: "../pic/HOLLOWKNIGHT.jpeg", link: "hollow.html" },
+    { name: "Hogwarts Legacy", img: "../pic/HOGWARTSLEGACY.jpeg", link: "hogwarts.html" },
+    { name: "Spiderman Remstered", img: "../pic/SPIDERMAN.jpeg", link: "spiderman.html" },
+    { name: "Minecraft", img: "../pic/MINECRAFT.jpeg", link: "minecraft.html" },
+    { name: "Dark Souls 2", img: "../pic/DARK SOULS-2.jpeg", link: "Darksoul.html" },
+    { name: "GTA V", img: "../pic/GTA V.jpeg", link: "GTA.html" },
+    { name: "Call Of Duty", img: "../pic/CALL OF DUTY.jpeg", link: "call.html" },
+    { name: "THE SIMS-4", img: "../pic/THE SIMS-4.jpeg", link: "The.html" },
+];
+
+const themeBtn = document.getElementById('themeBtn');
+
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        if (themeBtn) themeBtn.classList.replace('fa-palette', 'fa-moon');
+    } else {
+        document.body.classList.remove('light-theme');
+        if (themeBtn) themeBtn.classList.replace('fa-moon', 'fa-palette');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", applySavedTheme);
+
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+
+        document.body.classList.toggle('light-theme');
+
+        if (document.body.classList.contains('light-theme')) {
+            localStorage.setItem('theme', 'light');
+            themeBtn.classList.replace('fa-palette', 'fa-moon');
+        } else {
+            localStorage.setItem('theme', 'dark');
+            themeBtn.classList.replace('fa-moon', 'fa-palette');
+        }
+    });
+}
+
+function loadGames() {
+    const gamesGrid = document.getElementById('gamesGrid');
+    if (!gamesGrid) return; 
+
+    gamesGrid.innerHTML = ''; 
+    allGames.forEach(game => {
+        const gameCard = `
+            <a href="${game.link}" style="text-decoration: none; color: inherit;">
+                <div class="game-card">
+                    <img src="${game.img}" alt="${game.name}">
+                    <h4>${game.name}</h4>
+                </div>
+            </a>
+        `;
+        gamesGrid.innerHTML += gameCard;
+    });
+}
+
+const searchInput = document.getElementById('searchInput');
+const searchDropdown = document.getElementById('searchDropdown');
+
+if (searchInput && searchDropdown) {
+    searchInput.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase();
+        searchDropdown.innerHTML = ''; 
+
+        if (value.length > 0) {
+            const filteredGames = allGames.filter(game => 
+                game.name.toLowerCase().startsWith(value)
+            );
+
+            if (filteredGames.length > 0) {
+                searchDropdown.style.display = 'block';
+                filteredGames.forEach(game => {
+                    const div = document.createElement('div');
+                    div.className = 'search-item';
+                    div.innerHTML = `
+                        <a href="${game.link}" style="text-decoration: none; color: inherit; display: flex; align-items: center; width: 100%; padding: 5px;">
+                            <img src="${game.img}" style="width: 30px; height: 30px; object-fit: cover; margin-left:10px; border-radius:4px;">
+                            <span>${game.name}</span>
+                        </a>
+                    `;
+                    searchDropdown.appendChild(div);
+                });
+            } else {
+                searchDropdown.style.display = 'none';
+            }
+        } else {
+            searchDropdown.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target)) {
+            searchDropdown.style.display = 'none';
+        }
+    });
+}
+
+applySavedTheme(); 
+loadGames();      
+document.addEventListener("DOMContentLoaded", function () {
+
+    const authBtn = document.getElementById("authBtn");
+
+    let user = localStorage.getItem("loggedInUser");
+
+    if (user) {
+        authBtn.innerText = "Logout";
+
+        authBtn.onclick = function () {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "signup.html";
+        };
+
+    } 
+    else {
+        authBtn.innerText = "Log in / Sign up";
+
+        authBtn.onclick = function () {
+            window.location.href = "signup.html";
+        };
+    }
+
+});
+  </script>
+
+</body>
+</html>

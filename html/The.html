@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE-SIMS 4</title>
+    <link rel="stylesheet" href="../css/games.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-right">
+            <div class="logo" style="font-size: 30px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><b>Gamers Gate</b></div> </div>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search games and categories...">
+            <div id="searchDropdown" class="search-dropdown">
+                </div>
+        </div>
+
+        <div class="nav-left">
+            <i class="fas fa-palette theme-icon" id="themeBtn" title="Change Theme"></i>
+            <button class="login-btn" id="authBtn"></button>        </div>
+    </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-list">
+            <li><i class="fas fa-home"></i> <span><a href="../index.html">Home</a></span></li>
+            <li><i class="fas fa-fire"></i> <span><a href="news.html">News </a></span></li>
+            <li><i class="fas fa-star"></i> <span><a href="favgames.html">Favorites</a></span></li>
+            <li><i class="fas fa-bolt"></i> <span><a href="aabout us .html">About Us</a></span></li>
+            <li><i class="fas fa-phone"></i> <span><a href="contactus.html">Contact Us</a></span></li>
+            </ul>
+    </aside>
+    <main class="details-container">
+    <section class="info-card">
+        <div class="info-text">
+            <nav class="breadcrumb">Game Details</nav>
+            <h1>THE SIMS-4
+            </h1>            
+            <ul class="specs-list">
+                <li><span>Developer:</span> <a href="#">Arthur</a></li>
+                <li><span>Rating:</span> 7.3 (1,418,480 votes)</li>
+                <li><span>Released:</span> March 2021</li>
+                <li><span>Technology:</span> HTML5</li>
+                <li><span>Platforms:</span> Browser, App Store</li>
+            </ul>
+        </div>
+        
+        <div class="info-image">
+            <img src="../pic/THE SIMS-4.jpeg" alt="MarioKart8">
+        </div>
+    </section>
+
+    <section class="how-to-play-card">
+        <p>THE SIMS-4 is an IO adventure game with Action visuals...</p>
+        <h2>How to Play THE SIMS-4?</h2>
+        <p>The Sims 4 is the ultimate life simulation game where you control the lives, personalities, and environments of virtual people called "Sims." It focuses on creativity, storytelling, and management.
+
+🎮 Basic Controls (PC)
+WASD / Arrow Keys: Move the camera around the lot.
+
+Left-Click: Select a Sim, interact with objects, or place furniture in Build Mode.
+
+Right-Click (Hold & Drag): Rotate the camera view.
+
+Mouse Wheel: Zoom in and out.
+
+< and > Keys: Rotate objects when you are holding them in Build Mode.
+
+1, 2, 3: Change the game speed (1 is normal, 3 is ultra-fast).
+
+P or 0: Pause the game.
+
+🏠 Core Gameplay Mechanics
+Create-A-Sim (CAS): This is where you design your Sims. You can customize everything from their physical appearance and clothing to their Aspirations (life goals) and Traits (personality quirks like "Ambitious" or "Goofball").
+
+Live Mode: This is the "active" part of the game. You must manage your Sims' Needs, which are shown as bars:
+
+Bladder, Hunger, Energy, Fun, Social, and Hygiene. If these bars turn red, your Sim will become unhappy or, in the case of Hunger, eventually die.
+
+Build/Buy Mode: You can build a house from scratch or renovate existing ones. You can buy furniture, change wall patterns, and landscape gardens.
+
+Emotions: Sims experience different emotional states like "Flirty," "Focused," or "Angry." These emotions change based on their surroundings, social interactions, and recent events.
+
+💡 Tips for a Successful Sim Life
+The "Motherlode" Trick: If you want to build a dream mansion without working for it, press Ctrl + Shift + C to open the cheat console, type motherlode, and hit Enter to get 50,000 Simoleons (the in-game currency).
+
+Develop Skills: Have your Sims read books, practice on a computer, or cook to increase their skill levels. Higher skills lead to job promotions and higher salaries.
+
+Multi-tasking: Sims in The Sims 4 can do multiple things at once! They can eat a meal while watching TV and talking to another Sim. This is a great way to fill multiple Need bars simultaneously.
+
+Check the Whims: These are the small thought bubbles above your Sim's portrait. Fulfilling them gives you Satisfaction Points, which you can spend on powerful rewards and potions.</p>
+        <h3>Game Modes</h3>
+        <ul>
+            <li><strong>Single Player Modes</strong> Grand Prix: The classic "Campaign" mode where you race through a series of tracks to win a trophy.<br>
+
+Time Trials: A solo mode where the goal is to beat your own best time or a "ghost" of another player's run.<br>
+
+Practice/Training: A sandbox mode where players can test controls and learn the map without any pressure.</li>
+            <li><strong>Multiplayer Modes</strong> Versus (VS): A standard race or match where players compete directly against each other to reach the finish line or get the most points.<br>
+
+Battle Mode: Instead of racing, players use items to pop each other's balloons or drain their health in a closed arena.<br>
+
+Co-op: Players work together on the same team to achieve a goal, like defeating a boss or surviving waves of enemies.</li>
+        </ul>
+    </section>
+</main>
+<script>
+  const allGames = [
+    { name: "Mario Kart 8", img: "../pic/MarioKart8.JPG", link: "mario.html" }, 
+    { name: "Moto X3M", img: "../pic/MotoX3M.JPG", link: "moto.html" },
+    { name: "Minicraft 2", img: "../pic/Minicraft2.JPG", link: "minicraft.html" },
+    { name: "Sonic Mania", img: "../pic/SonicMania.JPG", link: "sonic.html" },
+    { name: "Bloxd.io", img: "../pic/Bloxd.io.JPG", link: "bloxd.html" },
+    { name: "Pupg", img: "../pic/pupg.jpeg", link: "bubg.html" },
+    { name: "Elden Ring", img: "../pic/elden.jpeg", link: "elden.html" },
+    { name: "Hollow Knight", img: "../pic/HOLLOWKNIGHT.jpeg", link: "hollow.html" },
+    { name: "Hogwarts Legacy", img: "../pic/HOGWARTSLEGACY.jpeg", link: "hogwarts.html" },
+    { name: "Spiderman Remstered", img: "../pic/SPIDERMAN.jpeg", link: "spiderman.html" },
+    { name: "Minecraft", img: "../pic/MINECRAFT.jpeg", link: "minecraft.html" },
+    { name: "Dark Souls 2", img: "../pic/DARK SOULS-2.jpeg", link: "Darksoul.html" },
+    { name: "GTA V", img: "../pic/GTA V.jpeg", link: "GTA.html" },
+    { name: "Call Of Duty", img: "../pic/CALL OF DUTY.jpeg", link: "call.html" },
+    { name: "THE SIMS-4", img: "../pic/THE SIMS-4.jpeg", link: "The.html" },
+];
+
+const themeBtn = document.getElementById('themeBtn');
+
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        if (themeBtn) themeBtn.classList.replace('fa-palette', 'fa-moon');
+    } else {
+        document.body.classList.remove('light-theme');
+        if (themeBtn) themeBtn.classList.replace('fa-moon', 'fa-palette');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", applySavedTheme);
+
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+
+        document.body.classList.toggle('light-theme');
+
+        if (document.body.classList.contains('light-theme')) {
+            localStorage.setItem('theme', 'light');
+            themeBtn.classList.replace('fa-palette', 'fa-moon');
+        } else {
+            localStorage.setItem('theme', 'dark');
+            themeBtn.classList.replace('fa-moon', 'fa-palette');
+        }
+    });
+}
+
+function loadGames() {
+    const gamesGrid = document.getElementById('gamesGrid');
+    if (!gamesGrid) return; 
+
+    gamesGrid.innerHTML = ''; 
+    allGames.forEach(game => {
+        const gameCard = `
+            <a href="${game.link}" style="text-decoration: none; color: inherit;">
+                <div class="game-card">
+                    <img src="${game.img}" alt="${game.name}">
+                    <h4>${game.name}</h4>
+                </div>
+            </a>
+        `;
+        gamesGrid.innerHTML += gameCard;
+    });
+}
+
+
+const searchInput = document.getElementById('searchInput');
+const searchDropdown = document.getElementById('searchDropdown');
+
+if (searchInput && searchDropdown) {
+    searchInput.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase();
+        searchDropdown.innerHTML = ''; 
+
+        if (value.length > 0) {
+            const filteredGames = allGames.filter(game => 
+                game.name.toLowerCase().startsWith(value)
+            );
+
+            if (filteredGames.length > 0) {
+                searchDropdown.style.display = 'block';
+                filteredGames.forEach(game => {
+                    const div = document.createElement('div');
+                    div.className = 'search-item';
+                    div.innerHTML = `
+                        <a href="${game.link}" style="text-decoration: none; color: inherit; display: flex; align-items: center; width: 100%; padding: 5px;">
+                            <img src="${game.img}" style="width: 30px; height: 30px; object-fit: cover; margin-left:10px; border-radius:4px;">
+                            <span>${game.name}</span>
+                        </a>
+                    `;
+                    searchDropdown.appendChild(div);
+                });
+            } else {
+                searchDropdown.style.display = 'none';
+            }
+        } else {
+            searchDropdown.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target)) {
+            searchDropdown.style.display = 'none';
+        }
+    });
+}
+
+applySavedTheme();  
+loadGames();       
+document.addEventListener("DOMContentLoaded", function () {
+
+    const authBtn = document.getElementById("authBtn");
+
+    let user = localStorage.getItem("loggedInUser");
+
+    if (user) {
+        authBtn.innerText = "Logout";
+
+        authBtn.onclick = function () {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "signup.html";
+        };
+
+    } 
+    else {
+        authBtn.innerText = "Log in / Sign up";
+
+        authBtn.onclick = function () {
+            window.location.href = "signup.html";
+        };
+    }
+
+});
+</script>
+</body>
+</html>

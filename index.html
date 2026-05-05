@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamers Gate</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="video">
+      <iframe width="560" height="315" src="nn.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="content">
+    <nav class="navbar">
+        <div class="nav-right">
+            <div class="logo" style="font-size: 30px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><b>Gamers Gate</b></div> </div>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search games and categories...">
+            <div id="searchDropdown" class="search-dropdown">
+                </div>
+        </div>
+
+        <div class="nav-left">
+            <i class="fas fa-palette theme-icon" id="themeBtn" title="Change Theme"></i>
+            <button class="login-btn" id="authBtn"></button>        </div>
+    </nav>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-list">
+            <li><i class="fas fa-home"></i> <span><a href="index.html">Home</a></span></li>
+            <li><i class="fas fa-fire"></i> <span><a href="html/news.html">News</a></span></li>
+            <li><i class="fas fa-star"></i> <span><a href="html/favgames.html">Favorites</a></span></li>
+            <li><i class="fas fa-bolt"></i> <span><a href="html/aabout us .html">About Us</a></span></li>
+            <li><i class="fas fa-phone"></i> <span><a href="html/contactus.html">Contact Us</a></span></li>
+            </ul>
+    </aside>
+
+
+    <main class="main-content" id="mainContent">
+        <section class="game-section">
+            <div class="hero-section">
+                <div class="badge">
+                    <span>✦</span>Discover your next favorite adventure today.
+                </div>
+                <h1>Play Like a <span class="highlight">PRO</span> <br> Anytime, Anywhere</h1>
+                <p class="p"><b>
+        Top picks for you!</b> </p>
+            </div>
+            <div class="games-grid" id="gamesGrid">
+                </div>
+        </section>
+    </main>
+    </div>
+    <script>
+     
+
+
+    const allGames = [
+    { name: "Mario Kart 8", img: "pic/MarioKart8.JPG", link: "html/mario.html" }, 
+    { name: "Moto X3M", img: "pic/MotoX3M.JPG", link: "html/moto.html" },
+    { name: "Minicraft 2", img: "pic/Minicraft2.JPG", link: "html/minicraft.html" },
+    { name: "Sonic Mania", img: "pic/SonicMania.JPG", link: "html/sonic.html" },
+    { name: "Bloxd.io", img: "pic/Bloxd.io.JPG", link: "html/bloxd.html" },
+    { name: "Pupg", img: "pic/pupg.jpeg", link: "html/bubg.html" },
+    { name: "Elden Ring", img: "pic/elden.jpeg", link: "html/elden.html" },
+    { name: "Hollow Knight", img: "pic/HOLLOWKNIGHT.jpeg", link: "html/hollow.html" },
+    { name: "Hogwarts Legacy", img: "pic/HOGWARTSLEGACY.jpeg", link: "html/hogwarts.html" },
+    { name: "Spiderman Remstered", img: "pic/SPIDERMAN.jpeg", link: "html/spiderman.html" },
+    { name: "Minecraft", img: "pic/MINECRAFT.jpeg", link: "html/minecraft.html" },
+    { name: "Dark Souls 2", img: "pic/DARK SOULS-2.jpeg", link: "html/Darksoul.html" },
+    { name: "GTA V", img: "pic/GTA V.jpeg", link: "html/GTA.html" },
+    { name: "Call Of Duty", img: "pic/CALL OF DUTY.jpeg", link: "html/call.html" },
+    { name: "THE SIMS-4", img: "pic/THE SIMS-4.jpeg", link: "html/The.html" },
+];
+
+const themeBtn = document.getElementById('themeBtn');
+
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        if (themeBtn) themeBtn.classList.replace('fa-palette', 'fa-moon');
+    } else {
+        document.body.classList.remove('light-theme');
+        if (themeBtn) themeBtn.classList.replace('fa-moon', 'fa-palette');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", applySavedTheme);
+
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+
+        document.body.classList.toggle('light-theme');
+
+        if (document.body.classList.contains('light-theme')) {
+            localStorage.setItem('theme', 'light');
+            themeBtn.classList.replace('fa-palette', 'fa-moon');
+        } else {
+            localStorage.setItem('theme', 'dark');
+            themeBtn.classList.replace('fa-moon', 'fa-palette');
+        }
+    });
+}
+
+function loadGames() {
+    const gamesGrid = document.getElementById('gamesGrid');
+    if (!gamesGrid) return; 
+
+    gamesGrid.innerHTML = ''; 
+    allGames.forEach(game => {
+        const gameCard = `
+            <a href="${game.link}" style="text-decoration: none; color: inherit;">
+                <div class="game-card">
+                    <img src="${game.img}" alt="${game.name}">
+                    <h4>${game.name}</h4>
+                </div>
+            </a>
+        `;
+        gamesGrid.innerHTML += gameCard;
+    });
+}
+
+const searchInput = document.getElementById('searchInput');
+const searchDropdown = document.getElementById('searchDropdown');
+
+if (searchInput && searchDropdown) {
+    searchInput.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase();
+        searchDropdown.innerHTML = ''; 
+
+        if (value.length > 0) {
+            const filteredGames = allGames.filter(game => 
+                game.name.toLowerCase().startsWith(value)
+            );
+
+            if (filteredGames.length > 0) {
+                searchDropdown.style.display = 'block';
+                filteredGames.forEach(game => {
+                    const div = document.createElement('div');
+                    div.className = 'search-item';
+                    div.innerHTML = `
+                        <a href="${game.link}" style="text-decoration: none; color: inherit; display: flex; align-items: center; width: 100%; padding: 5px;">
+                            <img src="${game.img}" style="width: 30px; height: 30px; object-fit: cover; margin-left:10px; border-radius:4px;">
+                            <span>${game.name}</span>
+                        </a>
+                    `;
+                    searchDropdown.appendChild(div);
+                });
+            } else {
+                searchDropdown.style.display = 'none';
+            }
+        } else {
+            searchDropdown.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target)) {
+            searchDropdown.style.display = 'none';
+        }
+    });
+}
+
+applySavedTheme(); 
+loadGames();    
+document.addEventListener("DOMContentLoaded", function () {
+
+    const authBtn = document.getElementById("authBtn");
+
+    let user = localStorage.getItem("loggedInUser");
+
+    if (user) {
+        authBtn.innerText = "Logout";
+
+        authBtn.onclick = function () {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "html/signup.html";
+        };
+
+    } 
+    else {
+        authBtn.innerText = "Log in / Sign up";
+
+        authBtn.onclick = function () {
+            window.location.href = "html/signup.html";
+        };
+    }
+
+}); 
+</script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #0b1957;
+}
+.Contact-info{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.form-section{
+    background-color: var(--card-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 750px;
+    margin: 20px auto; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border:1px solid #e8d9ed;
+    border-radius:6px;
+    margin-top: 100px;
+
+}
+.form-section form{
+    display: flex;
+    flex-direction: column;
+
+}
+.form-section label{
+    margin-top: 10px;
+    font-weight: bold;
+}
+.form-section input,
+.form-section textarea{
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid  #ccc;
+    border-radius: 6px;
+}
+.form-section input:focus,
+.form-section textarea:focus{
+    outline: none;
+    border-color: #b089c6;
+    box-shadow: 0 0 5px rgba(176, 137, 198, 0.5);
+}
+.form-section button{
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e8d9ed;
+    color: #1b0459;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.form-section button:hover{
+    background-color: #d2b3db;
+}
+body {
+    background-color: #d2b3db;
+    color: #0b1957;
+}
+
+.dark-mode {
+    background-color: #0b1957;
+    color: #f7f4ed;
+}
+
+.dark-mode header {
+    background-color: #0c2647;
+    color: #f7f4ed;
+}
+.dark-mode .form-section{
+    background-color: #f7f4ed;
+    color: #0b1957;
+}
+button{
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+@media (max-width: 600px){
+
+    body{
+        padding: 10px;
+    }
+
+    header{
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .form-section{
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .form-section input,
+    .form-section textarea{
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .form-section button{
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+.navbar {
+    height: 60px;
+    background-color: var(--nav-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    right: 0; 
+    left: 0;  
+    z-index: 1000;
+}
+
+
+.menu-icon, .bell-icon {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.search-container {
+    position: relative;
+    width: 40%;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 40px 10px 20px; 
+    border-radius: 20px;
+    border: none;
+    background: #352a33;
+    color: white;
+}
+
+.search-dropdown {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    background: #33333e;
+    border-radius: 10px;
+    display: none; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.search-item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.search-item:hover { background: #222228; }
+
+.login-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--nav-color);
+    position: fixed;
+    top: 60px;
+    right: 0; 
+    transition: width 0.3s ease; 
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 999;
+}
+
+.sidebar:hover {
+    width: var(--sidebar-expanded-width); 
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar-list li {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.sidebar-list li i {
+    min-width: 30px; 
+    font-size: 1.2rem;
+}
+
+.sidebar-list li span {
+    margin-right: 20px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.sidebar:hover li span {
+    opacity: 1; 
+}
+:root {
+     --bg-color: #dad4db;
+    --nav-color: #403642;
+    --card-color: #403642;
+    --accent-color: #d035d5;
+    --text-color: #ffffff;
+    --sidebar-width: 60px; 
+    --sidebar-expanded-width: 240px; 
+}
+.theme-icon {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.theme-icon:hover {
+    transform: rotate(30deg) scale(1.1);
+}
+
+
+body.light-theme {
+    --bg-color: #cdd5e1;      
+    --nav-color: #0e0929;      
+    --text-color: #ffffff;     
+    --card-color: #0b1328;     
+    --accent-color: #007bff;   
+}
+body.light-theme .navbar, 
+body.light-theme .sidebar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+body.light-theme .search-container input {
+    background: #2c364e;
+    color: #000;
+}
+body.light-theme .sidebar-list li,
+body.light-theme .nav-right .logo,
+body.light-theme .theme-icon,
+body.light-theme .bell-icon {
+    color: #ffffff !important;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.sidebar-list li i, .sidebar-list li span {
+    color: #ffffff !important;
+}
+
+
+.navbar .logo, 
+.navbar .theme-icon, 
+.navbar .bell-icon, 
+.navbar .menu-icon {
+    color: #ffffff !important; 
+}
+
+
+body.light-theme .sidebar, 
+body.light-theme .navbar {
+    
+    background-color: var(--nav-color) !important; 
+}
+
+.sidebar-list a, 
+.sidebar-list a span, 
+.sidebar-list a i {
+    color: #ffffff !important;        
+    text-decoration: none !important; 
+    opacity: 1 !important;            
+}
+body.light-theme .gamecard{
+    display: flex;
+background-color: #0e0929 !important;
+padding: 20px;
+gap:20px;
+border-radius: 10px;
+width: 80%;
+margin: 30 auto;
+height: 250px;
+margin-left: auto;
+margin-right: 130px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition: transform 0.1s ease, box-shadow 0.1s ease;
+margin-bottom: 35px;
+}
+.logo  {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+.form-section.light-theme{
+    background-color: #0e0929;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 750px;
+    margin: 20px auto; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border:1px solid #e8d9ed;
+    border-radius:6px;
+    margin-top: 100px;
+
+}

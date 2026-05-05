@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pubg</title>
+    <link rel="stylesheet" href="../css/games.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-right">
+            <div class="logo" style="font-size: 30px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><b>Gamers Gate</b></div> </div>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search games and categories...">
+            <div id="searchDropdown" class="search-dropdown">
+                </div>
+        </div>
+
+        <div class="nav-left">
+            <i class="fas fa-palette theme-icon" id="themeBtn" title="Change Theme"></i>
+            <button class="login-btn" id="authBtn"></button>        </div>
+    </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-list">
+            <li><i class="fas fa-home"></i> <span><a href="../index.html">Home</a></span></li>
+            <li><i class="fas fa-fire"></i> <span><a href="news.html">News </a></span></li>
+            <li><i class="fas fa-star"></i> <span><a href="favgames.html">Favorites</a></span></li>
+            <li><i class="fas fa-bolt"></i> <span><a href="aabout us .html">About Us</a></span></li>
+            <li><i class="fas fa-phone"></i> <span><a href="contactus.html">Contact Us</a></span></li>
+            </ul>
+    </aside>
+    <main class="details-container">
+    <section class="info-card">
+        <div class="info-text">
+            <nav class="breadcrumb">Game Details</nav>
+            <h1>Pupg</h1>            
+            <ul class="specs-list">
+                <li><span>Developer:</span> <a href="#">Arthur</a></li>
+                <li><span>Rating:</span> 8.6 (1,418,495 votes)</li>
+                <li><span>Released:</span> March 2021</li>
+                <li><span>Technology:</span> HTML5</li>
+                <li><span>Platforms:</span> Browser, App Store</li>
+            </ul>
+        </div>
+        
+        <div class="info-image">
+            <img src="../pic/pupg.jpeg" alt="Bloxd.io">
+        </div>
+    </section>
+
+    <section class="how-to-play-card">
+        <p>Pupg is an IO adventure game with Action visuals...</p>
+        <h2>How to Play Pupg?</h2>
+        <p>Playing PUBG (PlayerUnknown's Battlegrounds) is all about survival, strategy, and a bit of luck. The core goal is to be the last person or team standing among 100 players.
+
+Here is a beginner’s guide to mastering the basics:
+
+1. The Drop (Starting the Match)
+The game begins in a cargo plane flying over a massive map.
+
+Pick a Spot: Mark a location on your map. "Hot drops" (like Pochinki or Military Base) have great loot but are crowded with enemies. Remote clusters of houses are safer for beginners.
+
+Parachuting: Dive straight down to reach maximum speed (234 km/h) if you want to land first. Landing quickly is vital so you can find a weapon before anyone else.
+
+2. Looting (Gearing Up)
+Once you hit the ground, your priority is finding equipment. You start with nothing but your clothes.
+
+Weapons: Look for a versatile primary weapon like an M416 or AKM (Assault Rifles). A Sniper Rifle or DMR is great for long-range engagements.
+
+Armor: Find a Helmet and a Vest. These come in three levels (Level 1 to Level 3). A Level 3 helmet is the only thing that can save you from a sniper's headshot.
+
+Medical Supplies: Collect First Aid Kits, Bandages, and "Boosters" (Painkillers and Energy Drinks). Boosters heal you over time and make you run faster.
+
+3. The "Circle" (The Blue Zone)
+The map is constantly shrinking to force players together.
+
+Safe Zone (White Circle): This is where you need to be.
+
+Blue Zone: If you are outside the white circle when the timer ends, the blue "electric" wall will close in. Being caught in it drains your health.
+
+The Red Zone: Occasionally, a red circle appears on the map. This area is about to be bombed—get inside a building immediately!
+
+4. Combat Tips
+Use Cover: Never run in a straight line across an open field. Move from tree to tree or rock to rock.
+
+Listen Closely: Sound is your best friend. Use headphones to hear enemy footsteps or distant gunfire. This tells you exactly where the danger is.
+
+Patience Wins: You don't have to kill everyone to win. Sometimes, staying hidden and letting other players kill each other is the best way to reach the "Top 10."
+
+5. Basic Controls (PC Version)
+WASD: Movement
+
+F: Interact (open doors, pick up loot)
+
+Right-Click: Aim down sights (ADS)
+
+Left-Click: Shoot
+
+C: Crouch / Z: Prone (lie down)
+
+Spacebar: Jump/Vault over obstacles
+
+M: Map
+
+If you manage to survive until the very end, you’ll see the famous screen: "Winner Winner Chicken Dinner!"</p>
+        <h3>Game Modes</h3>
+        <ul>
+            <li><strong>Classic Mode (Battle Royale)</strong> Solo: You against 99 other players. High pressure, no one to revive you.<br>
+
+Duo: You and one partner. Coordination is key.<br>
+
+Squad: A team of 4 players. This is the most popular mode, involving strategy, roles (like sniper or medic), and team revives.</li>
+            <li><strong>Arcade Modes</strong> Team Deathmatch (TDM): Usually 8v8. You spawn with a specific weapon loadout in a small arena. The first team to reach the kill limit wins.<br>
+
+War Mode: A mix of Battle Royale and Deathmatch. You parachute in with a weapon and respawn shortly after dying.<br>
+
+Quick Match: A mini version of Classic mode that lasts about 8 minutes, usually set in a very small portion of a map.</li>
+        </ul>
+    </section>
+</main>
+<script>
+  const allGames = [
+    { name: "Mario Kart 8", img: "../pic/MarioKart8.JPG", link: "mario.html" }, 
+    { name: "Moto X3M", img: "../pic/MotoX3M.JPG", link: "moto.html" },
+    { name: "Minicraft 2", img: "../pic/Minicraft2.JPG", link: "minicraft.html" },
+    { name: "Sonic Mania", img: "../pic/SonicMania.JPG", link: "sonic.html" },
+    { name: "Bloxd.io", img: "../pic/Bloxd.io.JPG", link: "bloxd.html" },
+    { name: "Pupg", img: "../pic/pupg.jpeg", link: "bubg.html" },
+    { name: "Elden Ring", img: "../pic/elden.jpeg", link: "elden.html" },
+    { name: "Hollow Knight", img: "../pic/HOLLOWKNIGHT.jpeg", link: "hollow.html" },
+    { name: "Hogwarts Legacy", img: "../pic/HOGWARTSLEGACY.jpeg", link: "hogwarts.html" },
+    { name: "Spiderman Remstered", img: "../pic/SPIDERMAN.jpeg", link: "spiderman.html" },
+    { name: "Minecraft", img: "../pic/MINECRAFT.jpeg", link: "minecraft.html" },
+    { name: "Dark Souls 2", img: "../pic/DARK SOULS-2.jpeg", link: "Darksoul.html" },
+    { name: "GTA V", img: "../pic/GTA V.jpeg", link: "GTA.html" },
+    { name: "Call Of Duty", img: "../pic/CALL OF DUTY.jpeg", link: "call.html" },
+    { name: "THE SIMS-4", img: "../pic/THE SIMS-4.jpeg", link: "The.html" },
+];
+
+const themeBtn = document.getElementById('themeBtn');
+
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        if (themeBtn) themeBtn.classList.replace('fa-palette', 'fa-moon');
+    } else {
+        document.body.classList.remove('light-theme');
+        if (themeBtn) themeBtn.classList.replace('fa-moon', 'fa-palette');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", applySavedTheme);
+
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+
+        document.body.classList.toggle('light-theme');
+
+        if (document.body.classList.contains('light-theme')) {
+            localStorage.setItem('theme', 'light');
+            themeBtn.classList.replace('fa-palette', 'fa-moon');
+        } else {
+            localStorage.setItem('theme', 'dark');
+            themeBtn.classList.replace('fa-moon', 'fa-palette');
+        }
+    });
+}
+
+function loadGames() {
+    const gamesGrid = document.getElementById('gamesGrid');
+    if (!gamesGrid) return; 
+
+    gamesGrid.innerHTML = ''; 
+    allGames.forEach(game => {
+        const gameCard = `
+            <a href="${game.link}" style="text-decoration: none; color: inherit;">
+                <div class="game-card">
+                    <img src="${game.img}" alt="${game.name}">
+                    <h4>${game.name}</h4>
+                </div>
+            </a>
+        `;
+        gamesGrid.innerHTML += gameCard;
+    });
+}
+
+const searchInput = document.getElementById('searchInput');
+const searchDropdown = document.getElementById('searchDropdown');
+
+if (searchInput && searchDropdown) {
+    searchInput.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase();
+        searchDropdown.innerHTML = ''; 
+
+        if (value.length > 0) {
+            const filteredGames = allGames.filter(game => 
+                game.name.toLowerCase().startsWith(value)
+            );
+
+            if (filteredGames.length > 0) {
+                searchDropdown.style.display = 'block';
+                filteredGames.forEach(game => {
+                    const div = document.createElement('div');
+                    div.className = 'search-item';
+                    div.innerHTML = `
+                        <a href="${game.link}" style="text-decoration: none; color: inherit; display: flex; align-items: center; width: 100%; padding: 5px;">
+                            <img src="${game.img}" style="width: 30px; height: 30px; object-fit: cover; margin-left:10px; border-radius:4px;">
+                            <span>${game.name}</span>
+                        </a>
+                    `;
+                    searchDropdown.appendChild(div);
+                });
+            } else {
+                searchDropdown.style.display = 'none';
+            }
+        } else {
+            searchDropdown.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target)) {
+            searchDropdown.style.display = 'none';
+        }
+    });
+}
+
+applySavedTheme(); 
+loadGames();      
+document.addEventListener("DOMContentLoaded", function () {
+
+    const authBtn = document.getElementById("authBtn");
+
+    let user = localStorage.getItem("loggedInUser");
+
+    if (user) {
+        authBtn.innerText = "Logout";
+
+        authBtn.onclick = function () {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "signup.html";
+        };
+
+    } 
+    else {
+        authBtn.innerText = "Log in / Sign up";
+
+        authBtn.onclick = function () {
+            window.location.href = "signup.html";
+        };
+    }
+
+});
+</script>
+</body>
+</html>

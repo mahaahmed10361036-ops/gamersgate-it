@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+<div class="login-box">
+    <h2>Welcome Back</h2>
+
+    <input type="text" id="userInput" placeholder="Username or Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+    <button class="guest-btn" onclick="enterAsGuest()">Continue as Guest</button>
+
+    <p id="message"></p>
+
+    <p class="signup-text">
+        Don't have an account?
+        <a href="signup.html">Sign up</a>
+    </p>
+</div>
+
+<script>
+    if (!localStorage.getItem("users")) {
+        let users = [
+            {
+                username: "admin",
+                email: "admin@gmail.com",
+                password: "1234"
+            }
+        ];
+        localStorage.setItem("users", JSON.stringify(users));
+    }
+
+    window.onload = function () {
+        let user = localStorage.getItem("loggedInUser");
+        if (user) {
+            enterSite();
+        }
+    };
+
+    function login() {
+        let input = document.getElementById("userInput").value;
+        let password = document.getElementById("password").value;
+        let msg = document.getElementById("message");
+
+        let users = JSON.parse(localStorage.getItem("users"));
+
+        let found = users.find(u =>
+            (u.username === input || u.email === input) &&
+            u.password === password
+        );
+
+        if (found) {
+            localStorage.setItem("loggedInUser", JSON.stringify(found));
+            enterSite();
+        } else {
+            msg.innerText = "Wrong username/email or password";
+        }
+    }
+
+    function enterAsGuest() {
+        let guest = {
+            username: "Guest",
+            role: "guest"
+        };
+
+        localStorage.setItem("loggedInUser", JSON.stringify(guest));
+        enterSite();
+    }
+
+    function enterSite() {
+        alert("Welcome!");
+        window.location.href = "../index.html";
+    }
+</script>
+
+</body>
+</html>

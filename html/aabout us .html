@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/aabout us.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>About Us</title>
+</head>
+<body class="about-us">
+    <header>
+    <nav class="navbar">
+        <div class="nav-right">
+            <div class="logo" style="font-size: 30px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><b>Gamers Gate</b></div> </div>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search games and categories...">
+            <div id="searchDropdown" class="search-dropdown">
+                </div>
+        </div>
+
+        <div class="nav-left">
+            <i class="fas fa-palette theme-icon" id="themeBtn" title="Change Theme"></i>
+            <button class="login-btn" id="authBtn"></button>        </div>
+    </nav>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-list">
+            <li><i class="fas fa-home"></i> <span><a href="../index.html">Home</a></span></li>
+            <li><i class="fas fa-fire"></i> <span><a href="news.html">News </a></span></li>
+            <li><i class="fas fa-star"></i> <span><a href="favgames.html">Favorites</a></span></li>
+            <li><i class="fas fa-bolt"></i> <span><a href="aabout us .html">About Us</a></span></li>
+            <li><i class="fas fa-phone"></i> <span><a href="contactus.html">Contact Us</a></span></li>
+            </ul>
+    </aside>
+  
+    <main >
+        <section class="container">
+            <section class="right">
+                    <h1 class="about-title">about us</h1>
+                <article>
+                    <h2>our story</h2>
+                    <p>We are a team of passionate individuals
+                        dedicated to providing the best services possible.
+                        Our journey began with a
+                        simple idea: to make a difference
+                        in the lives of our customers.</p>
+                </article>
+            </section>
+            <section class="left">
+                <article>
+                    <h3>our goals</h3>
+                    <p>Our goal at GamersGate is to create a trusted and enjoyable platform for gamers around the world. We aim to provide easy access to a wide variety of digital games while ensuring a smooth, secure, and user-friendly experience.</p>
+                </article>
+                <article>
+                    <h3>what do you need about this website</h3>
+                    <p>At GamersGate, everything a gamer needs is in one place:
+
+A free account to browse and purchase games
+A stable internet connection for downloading digital content
+Secure payment methods for safe transactions
+.</p>
+                </article>
+            </section>
+        </section>
+    </main>
+   <script>
+    const allGames = [
+    { name: "Mario Kart 8", img: "../pic/MarioKart8.JPG", link: "mario.html" }, 
+    { name: "Moto X3M", img: "../pic/MotoX3M.JPG", link: "moto.html" },
+    { name: "Minicraft 2", img: "../pic/Minicraft2.JPG", link: "minicraft.html" },
+    { name: "Sonic Mania", img: "../pic/SonicMania.JPG", link: "sonic.html" },
+    { name: "Bloxd.io", img: "../pic/Bloxd.io.JPG", link: "bloxd.html" },
+    { name: "Pupg", img: "../pic/pupg.jpeg", link: "bubg.html" },
+    { name: "Elden Ring", img: "../pic/elden.jpeg", link: "elden.html" },
+    { name: "Hollow Knight", img: "../pic/HOLLOWKNIGHT.jpeg", link: "hollow.html" },
+    { name: "Hogwarts Legacy", img: "../pic/HOGWARTSLEGACY.jpeg", link: "hogwarts.html" },
+    { name: "Spiderman Remstered", img: "../pic/SPIDERMAN.jpeg", link: "spiderman.html" },
+    { name: "Minecraft", img: "../pic/MINECRAFT.jpeg", link: "minecraft.html" },
+    { name: "Dark Souls 2", img: "../pic/DARK SOULS-2.jpeg", link: "Darksoul.html" },
+    { name: "GTA V", img: "../pic/GTA V.jpeg", link: "GTA.html" },
+    { name: "Call Of Duty", img: "../pic/CALL OF DUTY.jpeg", link: "call.html" },
+    { name: "THE SIMS-4", img: "../pic/THE SIMS-4.jpeg", link: "The.html" },
+];
+
+const themeBtn = document.getElementById('themeBtn');
+
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        if (themeBtn) themeBtn.classList.replace('fa-palette', 'fa-moon');
+    } else {
+        document.body.classList.remove('light-theme');
+        if (themeBtn) themeBtn.classList.replace('fa-moon', 'fa-palette');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", applySavedTheme);
+
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+
+        document.body.classList.toggle('light-theme');
+
+        if (document.body.classList.contains('light-theme')) {
+            localStorage.setItem('theme', 'light');
+            themeBtn.classList.replace('fa-palette', 'fa-moon');
+        } else {
+            localStorage.setItem('theme', 'dark');
+            themeBtn.classList.replace('fa-moon', 'fa-palette');
+        }
+    });
+}
+
+function loadGames() {
+    const gamesGrid = document.getElementById('gamesGrid');
+    if (!gamesGrid) return; 
+
+    gamesGrid.innerHTML = ''; 
+    allGames.forEach(game => {
+        const gameCard = `
+            <a href="${game.link}" style="text-decoration: none; color: inherit;">
+                <div class="game-card">
+                    <img src="${game.img}" alt="${game.name}">
+                    <h4>${game.name}</h4>
+                </div>
+            </a>
+        `;
+        gamesGrid.innerHTML += gameCard;
+    });
+}
+
+const searchInput = document.getElementById('searchInput');
+const searchDropdown = document.getElementById('searchDropdown');
+
+if (searchInput && searchDropdown) {
+    searchInput.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase();
+        searchDropdown.innerHTML = ''; 
+
+        if (value.length > 0) {
+            const filteredGames = allGames.filter(game => 
+                game.name.toLowerCase().startsWith(value)
+            );
+
+            if (filteredGames.length > 0) {
+                searchDropdown.style.display = 'block';
+                filteredGames.forEach(game => {
+                    const div = document.createElement('div');
+                    div.className = 'search-item';
+                    div.innerHTML = `
+                        <a href="${game.link}" style="text-decoration: none; color: inherit; display: flex; align-items: center; width: 100%; padding: 5px;">
+                            <img src="${game.img}" style="width: 30px; height: 30px; object-fit: cover; margin-left:10px; border-radius:4px;">
+                            <span>${game.name}</span>
+                        </a>
+                    `;
+                    searchDropdown.appendChild(div);
+                });
+            } else {
+                searchDropdown.style.display = 'none';
+            }
+        } else {
+            searchDropdown.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target)) {
+            searchDropdown.style.display = 'none';
+        }
+    });
+}
+
+applySavedTheme(); 
+loadGames();      
+document.addEventListener("DOMContentLoaded", function () {
+
+    const authBtn = document.getElementById("authBtn");
+
+    let user = localStorage.getItem("loggedInUser");
+
+    if (user) {
+        authBtn.innerText = "Logout";
+
+        authBtn.onclick = function () {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "signup.html";
+        };
+
+    } 
+    else {
+        authBtn.innerText = "Log in / Sign up";
+
+        authBtn.onclick = function () {
+            window.location.href = "signup.html";
+        };
+    }
+
+});
+
+   </script> 
+</body>
+
+</html>
